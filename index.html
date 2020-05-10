@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="images/hexagons1.gif">
+					<h1>HEXAGONAL ARCHITECTURE</h1>
+					<h3>There Is No Secret Sauce</h3>
+					<p>
+						<small>Presentation by <a href="https://sandeshdahake.github.io/site/">Sandesh Dahake</a> </small>
+					</p>				
+				</section>
+				<section>
+					<h2>WHY?</h2>
+				</section>
+				<!-- <section>
+					<h3 style="font-size: larger;">Vertically Layered Architecture</p>
+					<img src="images/layered.png" />
+					<p style="font-size: medium;">Adapted from http://serena-yeoh.blogspot.com/2013/06/layered-architecture-for-net.html</p>
+				</section> -->
+				<section>
+					<h2>Blog Software</h2>
+					<ul>
+						<li class="fragment fade-in">User Interface</li>
+						<li class="fragment fade-in">Use Cases</li>
+						<li class="fragment fade-in">Persistence Infrastructure</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Project Kickoff</h2>
+					<ul>
+						<li>Use Cases</li>
+						<li>User Interface <span class="fragment fade-in">: Web-REST</span></li>
+						<li>Persistence Infrastructure <span class="fragment fade-in">: My SQL</span></li>
+					</ul>
+				</section>
+				<section data-background="images/happy.gif"></section>
+				<section>
+					<h2>1 Month</h2>
+					<ul>
+						<li>Use Cases</li>
+						<li>User Interface <span class="fragment fade-in">: Web-GraphQL</span></li>
+						<li>Persistence Infrastructure <span class="fragment fade-in">: MongoDB</span></li>
+					</ul>
+				</section>
+				<section data-background="images/ok.gif"></section>
+				<section>
+					<h2>2 Month</h2>
+					<ul>
+						<li>Use Cases</li>
+						<li>User Interface</li>
+						<li>Persistence Infrastructure <span class="fragment fade-in">: Distributed DB</span></li>
+					</ul>
+				</section>
+				<section data-background="images/frustration.gif"></section>
+				<section data-background-color="#000000">
+					<img src="images/evolutionary1.png" />
+				</section>
+				<section>
+					<h2>Evolutionary</h2>
+					<P class="fragment fade-in" style="font-size: larger;">
+							Flexible to change
+					</p>
+				</section>
+				<section data-background-iframe="https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html" data-background-interactive>
+					<div style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<h2>Business-Centric</h2>
+						<P class="fragment fade-in" style="color: red; font-size: larger;">
+							<span class="fragment strike ">
+								Instead of Infrastructure-Centric
+							</span>
+						</p>
+				    </div>
+				</section>
+				<section>
+					<h2>Uncle Bob’s quotes</h2>
+					
+					<blockquote>
+						&ldquo;Business Rules would make or save the business money, irrespective of whether they were implemented on a computer. They would make or save money even if they were executed manually&rdquo;
+					</blockquote>
+					<blockquote>
+						&ldquo;A good architecture allows major decisions to be deferred and a good architect maximize the number of decisions not made.&rdquo;
+					</blockquote>
+
+				</section>
+				<section>
+					<h2>Mixing Domain and Infrastructure</h2>
+					<p>Hard to</p>
+					<p class="fragment fade-in" style="color: red;">See</p>
+					<p class="fragment fade-in" style="color: red;">Test</p>
+					<p class="fragment fade-in" style="color: red;">Change</p>
+					<p>The Business</p>
+				</section>
+
+				<section data-background="#4d7e65">
+					<h2>Clean ARCHITECTURE</h2>
+					<p>Robert C Martin</p>
+					<img src="images/clean-arc.png" />
+				</section>
+				<section data-background="#b5533c">
+					<h2>ONION ARCHITECTURE</h2>
+					<p>Jeffrey Palermo</p>
+					<img src="images/onion.png" style="width: 60%;" height="60%" />
+				</section>
+				<section data-background="#4d7e65">
+					<h2>HEXAGONAL ARCHITECTURE</h2>
+					<h3>(Ports and Adapters)</h3>
+					<p>Alistair Cockburn</p>
+					<img src="images/hexagonal-arc.png" style="width: 50%;" height="50%" />
+				</section>
+				<section data-background="#000000">
+					<img src="images/hex1.png" style="width: 60%;" height="60%"/>
+				</section>
+				<section data-background="#000000">
+					<img src="images/hex2.png" style="width: 60%;" height="60%"/>
+				</section>
+				<section data-background="#000000">
+					<img src="images/hex3.png"/>
+				</section>
+			</div>
+		</div>
+        
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
