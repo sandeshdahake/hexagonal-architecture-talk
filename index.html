@@ -31,7 +31,17 @@
 					<h3>There Is No Secret Sauce</h3>
 					<p>
 						<small>Presentation by <a href="https://sandeshdahake.github.io/site/">Sandesh Dahake</a> </small>
-					</p>				
+					</p>
+					<aside class="notes">
+						Good Morning, Good Afternoon everyone.....
+						         
+						Today we will be deep dive into HEXAGONAL ARCHITECTURE....
+						but before that, lets all agreee on scope of term Arcitecture... 
+						Here we dont mean ENTERPRICE ARCHITECTURE, what We mean here is SOFTWARE ARCHITECTURE...
+						and to be more precise DEVELOPENT PRACTICES
+
+						Now defination of Architecture is set lets start with todays AGENDA. 
+					</aside>				
 				</section>
 				<Section>
 					<h2>Agenda</h2>
@@ -39,10 +49,15 @@
 					<p class="fragment fade-in"> Clean Architecture & Onion Architecture</p>
 					<p class="fragment fade-in"> Dependency injection</p>
 					<p class="fragment fade-in"> Hexagonal Architecture</p>
-					<p class="fragment fade-in"> Code</p>
+					<p class="fragment fade-in"> Code Overview</p>
 					<p class="fragment fade-in"> Bonus :) </p>
 					<p class="fragment fade-in"> Hexagonal Architecture Benefits</p>
 					<p class="fragment fade-in"> Q&A</p>
+					<aside class="notes">
+						As we have only 30 min ... we will keep CLEAN ARCHITECTURE AND ONION ARCHITECTURE short .....but if time permits we will cover in details at the end ......
+
+						At the end of code overview We have bonus ... It may help us to resolve JIRA ticket brent has in his dev cohort backlog ..but lets keep it secret for now
+					</aside>
 				</Section>
 				<!-- <section>
 					<h2>WHY?</h2>
@@ -67,6 +82,15 @@
 						<li>User Interface <span class="fragment fade-in"> Web-REST</span></li>
 						<li>Persistence Infrastructure <span class="fragment fade-in"> My SQL</span></li>
 					</ul>
+					<aside class="notes">
+						Lets start with what you should expect from your Architecture.......
+
+						Assume you joined greenfield project to design awsome software ......
+
+						what you will require ---- business rules ie Domain information  ----- How your users will use the software ie User Interface
+						------- How you will store your data if any ie Persistence infrastructure......
+                        you worked hard on the solution say 2 Months.... you released it to production .... your users are happy , boss is happy and 
+					</aside>
 				</section>
 				<section data-background="images/happy.gif"></section>
 				<section>
@@ -75,6 +99,10 @@
 						<li>Use Cases</li>
 						<li>User Interface <span class="fragment fade-in" style="color: red;"> GraphQL</span></li>
 						<li>Persistence Infrastructure <span class="fragment fade-in" style="color: red;" > MongoDB</span></li>
+						<aside class="notes">
+							After 1 month new Architect joins the team and he says "Your solution is not scalable" ......
+							And he asked you to use Graphql and MongoDB .....  You spent another 2 months and devlivered the solution ....but by the end of release your reaction will be 
+						</aside>
 					</ul>
 				</section>
 				<section data-background="images/ok.gif"></section>
@@ -84,9 +112,20 @@
 						<li>Use Cases</li>
 						<li>User Interface<span class="fragment fade-in" style="color: red;"> Websockets</span></li>
 						<li>Persistence Infrastructure <span class="fragment fade-in" style="color: red;"> AWS Storage</span></li>
+						<aside class="notes">
+							Now after 1 month of release .. PO comes and ask we are going mobile only and need ........  
+
+							By the time you finish with your developemt you will be 
+						</aside>
+
 					</ul>
 				</section>
-				<section data-background="images/frustration.gif"></section>	
+				<section data-background="images/frustration.gif">
+					<aside class="notes">
+						What we learned from this example .... if we look closely .... for us only infrastructure details are changing ...
+						and over the lifecycle of software it will keep changing ... so what we expect from our architecture is ... it should be ....
+					</aside>
+				</section>	
 				<!-- <section data-background-color="#000000">
 					<img src="images/evolutionary1.png" />
 				</section> -->
@@ -94,25 +133,52 @@
 					<h2>Evolutionary</h2>
 					<P class="fragment fade-in" style="font-size: larger;">
 							Flexible to change
+							<aside class="notes">
+								It should adapt itslef to changing requirments with mimimum efforts
+							</aside>		
 					</p>
 				</section>
 				<section>
 					<img src="images/bad1.png" alt="Snow" style="width:50%">
-					</section>
+					<aside class="notes">
+						classical layered architecture......
+						How many of us, have used this package structure in their eprojects .... to be honest i have used it lot ....
+						Can anyone tell me whats wrong with this ..... 
+
+						By looking at the code structure you can not tell ....what this software is doing ....
+					</aside>		
+				</section>
 				<section>
 					<img src="images/bad2.png" alt="Snow" style="width:50%">
+					<aside class="notes">
+						This is the other pattern ..... where we create packages based on the techology,frameworks....
+						.... here the same problem .... intent is not cleared..... its hidden behind infrastructure details   
+					</aside>		
 				</section>
 				<section data-background-iframe="https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html" data-background-interactive>
+					<aside class="notes">
+						Second requirment from our architecture ... is it should be screaming its intent ..... In his famous blog ..on clean coding ... robert Martin says ..
+						... When you look at the BLUEPRINT of building ..... you come to know which building it is... eg CHURCH and STADIUM ........
+						Similary if new developer ...open your source package ... your architecture should tell what that software is about ..... eg Healthcare, finacial    
+					</aside>		
+
 				</section>
 				<section>
 					<blockquote>
 						&lsquo;Business Rules would make or save the business money, irrespective of whether they were implemented on a computer. They would make or save money even if they were executed manually&rsquo;
 					</blockquote>
+					<aside class="notes">
+						Domain is heart of your software .... If hilti stops using HOL ..it will have impact on sales ...but hilti will not stop selling tools ....
+
+					</aside>
 				</section>
 				<section>					
 					<blockquote>
 						&lsquo;A good architecture allows major decisions to be deferred and a good architect maximize the number of decisions not made.&rsquo;
 					</blockquote>
+					<aside class="notes">
+						Idea here is your architecture should be highly decoupled ...... so that you can implement the abstraction and details can be implementd later
+					</aside>
 				</section>
 				<section>
 					<h2>Business-Centric</h2>
@@ -120,6 +186,9 @@
 						<span class="fragment strike ">
 							Instead of Infrastructure-Centric
 						</span>
+						<aside class="notes">
+							So next expectaion from our arcitecture should be domain centric ... not Infrastructure ... Infrastructure is details and details can be changed later
+						</aside>
 					</p>
 				</section>
 				<!-- <section>
@@ -135,6 +204,9 @@
 					<h2>Clean ARCHITECTURE</h2>
 					<p>Robert C Martin</p>
 					<img src="images/clean-arc.png" />
+					<aside class="notes">
+						Entities and user cases are heart of the system .... and infrastructure details like db .. depends on core ... .. dependecy flow from out side to inside 
+					</aside>
 				</section>
 				<section data-background="#b5533c">
 					<h2>ONION ARCHITECTURE</h2>
@@ -146,6 +218,9 @@
 					<h3>(Ports and Adapters)</h3>
 					<p>Alistair Cockburn</p>
 					<img src="images/hexagonal-arc.png" style="width: 50%;" height="50%" />
+					<aside class="notes">
+						Works on the same principle of Onion and Clean Architecture but it is super set with concept of ports and adapters  
+					</aside>
 				</section>
 				<section>
 					<h2>Dependency injection</h2>
